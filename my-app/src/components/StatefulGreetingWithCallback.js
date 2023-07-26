@@ -2,7 +2,7 @@
 import React from "react";
 
 // do not return. Render.
-class StatefulGreeting extends React.Component {
+class StatefulGreetingWithCallback extends React.Component {
 
     constructor(props) {
         //to call React.Components. Pass props so super pass props too.
@@ -19,13 +19,17 @@ class StatefulGreeting extends React.Component {
     handleClick() {
         this.setState({
             introduction : "Byebye",
-        })
-        this.setState({
             buttonText: "Enter",
-        })
-        console.log("clicked button", this.state.introduction);
-    }
+            // Add a new arrow function to specify new state.
+        }, () => {
+            console.log("new state -", 
+            this.state.introduction, this.state.buttonText);    
 
+        });
+        // logs before setState is called. Use Callback functions.
+        console.log("clicked button with old state -", 
+        this.state.introduction, this.state.buttonText);
+    }
 
     render() {
         // Add {} for multiple lines of code
@@ -41,4 +45,4 @@ class StatefulGreeting extends React.Component {
 
 }
 
-export default StatefulGreeting;
+export default StatefulGreetingWithCallback;

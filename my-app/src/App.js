@@ -1,8 +1,10 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import FunctionalGreetingWithProps from './components/FunctionalGreetingWithProps';
 import FunctionalGreeting from './components/FunctionalGreeting';
 import StatefulGreeting from './components/StatefulGreeting';
+import StatefulGreetingWithCallback from './components/StatefulGreetingWithCallback';
+
 
 function App() {
   return (
@@ -11,6 +13,7 @@ function App() {
       <FunctionalGreetingWithProps greeting="Nice to meet you" 
       name="Ava" cat="Bear" />
       <StatefulGreeting greeting="working prop" dude="dude" />
+      <StatefulGreetingWithCallback />
     </div>
   );
 }
