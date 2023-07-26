@@ -20,6 +20,9 @@ class StatefulGreeting extends React.Component {
         this.setState({
             introduction : "Byebye",
         })
+        this.setState({
+            buttonText: "Enter",
+        })
         console.log("clicked button", this.state.introduction);
     }
 
