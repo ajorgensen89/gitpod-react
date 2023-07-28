@@ -5,6 +5,8 @@ import FunctionalGreeting from './components/FunctionalGreeting';
 import StatefulGreeting from './components/StatefulGreeting';
 import StatefulGreetingWithCallback from './components/StatefulGreetingWithCallback';
 import StatefulGreetingWithPrevState from './components/StatefulGreetingWithPrevState';
+import EventsFunctional from './components/EventsFunctional';
+import EventsClass from './components/EventsClass';
 
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
       <StatefulGreeting greeting="working prop" dude="dude" />
       <StatefulGreetingWithCallback />
       <StatefulGreetingWithPrevState />
+      <EventsFunctional />
+      <EventsClass />
     </div>
   );
 }
