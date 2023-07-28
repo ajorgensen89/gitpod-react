@@ -8,6 +8,8 @@ import StatefulGreetingWithPrevState from './components/StatefulGreetingWithPrev
 import EventsFunctional from './components/EventsFunctional';
 import EventsClass from './components/EventsClass';
 import EventBinding from './components/EventBinding';
+import ConditionalRenderingClass from './components/ConditionalRenderingClass'
+import ConditionalRenderingFunctional from './components/ConditionalRenderingFunctional'
 
 function App() {
   return (
@@ -21,7 +23,10 @@ function App() {
       <EventsFunctional />
       <EventsClass />
       <EventBinding />
+      <ConditionalRenderingClass />  
+      <ConditionalRenderingFunctional connected={true}/>
     </div>
+    //PROP CONNECTED used to change in CRF.js
   );
 }
 
