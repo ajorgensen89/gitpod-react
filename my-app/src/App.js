@@ -16,10 +16,12 @@ import RenderingLists from './components/RenderingLists';
 import LifeCyclesCDM from './components/LifeCyclesCDM';
 import LifeCycleCDU from './components/LifeCyclesCDU';
 import LifeCyclesCWU from './components/LifeCyclesCWU';
+import ControlledForm from './components/ControlledForm';
 
 function App() {
   return (
     <div className="App">
+      <ControlledForm />
       <FunctionalGreeting />
       <FunctionalGreetingWithProps greeting="Nice to meet you" 
       name="Ava" cat="Bear" />
@@ -37,6 +39,7 @@ function App() {
       <LifeCyclesCDM />
       <LifeCycleCDU />
       <LifeCyclesCWU />
+      
     </div>
     //PROP CONNECTED used to change in CRF.js
   );
