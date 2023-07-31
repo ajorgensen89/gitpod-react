@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+// Lifecycle methods are only in CLASS
 export class LifeCyclesCWUTracker extends Component {
   constructor(props) {
     super(props)
