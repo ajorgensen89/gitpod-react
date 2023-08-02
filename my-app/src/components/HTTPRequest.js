@@ -7,6 +7,8 @@ export class HTTPRequest extends Component {
     
         this.state = {
             posts: [],
+            // set error
+            error: null
         }
     }
 
@@ -20,7 +22,12 @@ export class HTTPRequest extends Component {
                 posts: Array.isArray(response.data) ? response.data : [response.data]
             })
         })
-        .catch()
+        // catch any errors.
+        .catch(error => {
+            this.setState({
+                error: error.message
+            })
+        })
     }
 
 
@@ -44,7 +51,10 @@ export class HTTPRequest extends Component {
                             </div>
                         ))
                     ) : (
-                        <h4>Loading Posts...</h4>
+                        // Check if exsists. catch error or display loading post..
+                        this.state.error 
+                        ? <p>{this.state.error}</p>
+                        : <h4>Loading Posts...</h4>
                     )
                 }
                 
