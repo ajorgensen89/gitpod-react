@@ -11,23 +11,45 @@ export class HTTPRequest extends Component {
     }
 
     componentDidMount() {
+        // ass /1 to the end to get one post but does not as not an array.
         axios.get('https://jsonplaceholder.typicode.com/posts')
         .then(response => {
             console.log(response);
             this.setState({
-                posts: response.data
+                // set to check if it is an ARRAY and if not to set the respose of ONE post.
+                posts: Array.isArray(response.data) ? response.data : [response.data]
             })
         })
+        .catch()
     }
 
 
 
     render() {
         // JSON.stringify to render all posts from data in console log os 'response'.
+        // {/* {JSON.stringify(this.state.posts)} */}
+        const posts = this.state.posts;
         return (
             <div>
                 <h2>Posts:</h2>
-                {JSON.stringify(this.state.posts)}
+                {
+                    posts.length ? (
+                        posts.map(post => (
+                            <div key={post.id}>
+                                <h2>{post.id}. {post.title}</h2>
+                                <h4>By {post.userId}</h4>
+                                <p>{post.body}</p>
+                                <hr />
+
+                            </div>
+                        ))
+                    ) : (
+                        <h4>Loading Posts...</h4>
+                    )
+                }
+                
+               
+                
             </div>
         )
     }
